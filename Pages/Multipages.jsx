@@ -35,20 +35,36 @@ const Multipages = () => {
   };
 
   return (
+    <div style={{display: "flex", 
+    justifyContent: "center", 
+    alignItems: "center",
+    width: "100vw",
+    height: "100vh",
+    }} >
+      <div style={{margin: "20px",
+      border: "dotted"
+      }}>
     <form onSubmit={handleSubmit(onSubmit)}>
       
       {pages[currentPage]}
 
       
-      <div className="button-group">
+      <div style={{display: "flex",
+        justifyContent: "flex-end"
+      }} className="button-group">
         {currentPage > 0 && currentPage < pages.length - 1 && (
-          <button type="button" onClick={handleBack} className="btn-back">
+          <button  type="button" onClick={handleBack} className="btn-back">
             VOLTAR
           </button>
         )}
         {currentPage < pages.length - 2 ? (
-          <button type="button" onClick={handleNext} className="btn-next">
-            PRÓXIMO
+          <button style={{height: "45px",
+            width: "100px",
+            borderRadius: "10px",
+            border: "0",
+            backgroundColor: "#633BBC"
+          }} type="button" onClick={handleNext} className="btn-next">
+            CONTINUAR
           </button>
         ) : currentPage === pages.length - 2 ? (
           <button type="submit" className="btn-submit">
@@ -57,6 +73,8 @@ const Multipages = () => {
         ) : null}
       </div>
     </form>
+    </div>
+    </div>
   );
 };
 
