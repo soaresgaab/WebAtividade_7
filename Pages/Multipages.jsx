@@ -42,7 +42,10 @@ const Multipages = () => {
     height: "100vh",
     }} >
       <div style={{margin: "20px",
-      border: "dotted"
+      border: "solid",
+      borderWidth: "1px",
+      borderColor: "#E1E1E6",
+      borderRadius: "5px"
       }}>
     <form onSubmit={handleSubmit(onSubmit)}>
       
@@ -50,10 +53,18 @@ const Multipages = () => {
 
       
       <div style={{display: "flex",
-        justifyContent: "flex-end"
+        justifyContent: "flex-end",
+        margin: "30px"
       }} className="button-group">
         {currentPage > 0 && currentPage < pages.length - 1 && (
-          <button  type="button" onClick={handleBack} className="btn-back">
+          <button style={{height: "45px",
+            width: "100px",
+            borderRadius: "10px",
+            border: "0",
+            backgroundColor: "#633BBC",
+            color: "white",
+            marginRight: "30px"
+          }} type="button" onClick={handleBack} className="btn-back">
             VOLTAR
           </button>
         )}
@@ -62,12 +73,19 @@ const Multipages = () => {
             width: "100px",
             borderRadius: "10px",
             border: "0",
-            backgroundColor: "#633BBC"
+            backgroundColor: "#633BBC",
+            color: "white"
           }} type="button" onClick={handleNext} className="btn-next">
             CONTINUAR
           </button>
         ) : currentPage === pages.length - 2 ? (
-          <button type="submit" className="btn-submit">
+          <button style={{height: "45px",
+            width: "100px",
+            borderRadius: "10px",
+            border: "0",
+            backgroundColor: "#633BBC",
+            color: "white"
+          }} type="submit" className="btn-submit">
             ENVIAR PROPOSTA
           </button>
         ) : null}
